@@ -1,6 +1,6 @@
 <template>
 	<footer>
-		&copy; {{ new Date().getFullYear() }} <a href="https://www.bmw.com/">{{ $t("BMWVietnam") }}</a>
+		&copy; {{ new Date().getFullYear() }} <a href="https://www.bmw.com/">{{ $t("BMW Vietnam") }}</a>
 	</footer>
 </template>
 
