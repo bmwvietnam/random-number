@@ -174,7 +174,7 @@ function toggleSettingsPanel(): void {
 			{
 				icon: ['fab', 'github'],
 				show: true,
-				title: 'GitHub',
+				title: 'BMW Vietnam',
 				onClick: openGitHub
 			},
 		]" size="xl" />
