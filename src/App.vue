@@ -171,12 +171,12 @@ function toggleSettingsPanel(): void {
 				title: $t('history'),
 				onClick: toggleHistoryPanel
 			},
-			{
+			/*{
 				icon: ['fab', 'github'],
 				show: true,
 				title: 'BMW Vietnam',
 				onClick: openGitHub
-			},
+			},*/
 		]" size="xl" />
 	</div>
 </template>
