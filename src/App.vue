@@ -25,7 +25,7 @@ const settings = ref<SettingsInfo>(((): SettingsInfo => {
 		minimum: "1",
 		oddOnly: false,
 		quantity: "1",
-		repeat: true,
+		repeat: false,
 		speed: "30",
 	};
 	try {
@@ -207,5 +207,6 @@ main {
 	gap: 30px;
 	margin: 0 auto;
 	padding: 30px;
+	flex-flow: row wrap;
 }
 </style>
