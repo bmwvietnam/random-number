@@ -1,0 +1,167 @@
+:root {
+	--bg-body: white;
+	--fg-alpha-05: rgba(0, 0, 0, .05);
+	--fg-alpha-1: rgba(0, 0, 0, .1);
+	--fg-alpha-2: rgba(0, 0, 0, .2);
+	--fg-alpha-25: rgba(0, 0, 0, .25);
+	--fg-alpha-5: rgba(0, 0, 0, .5);
+	--theme-color: rgb(0, 102, 204);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+*:focus:not(:focus-visible) {
+	outline: none;
+}
+
+*:focus-visible {
+	outline: auto;
+}
+
+body {
+	background-color: var(--bg-body);
+	color: rgba(0, 0, 0, .8);
+	cursor: default;
+	font-family: sans-serif;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	-webkit-tap-highlight-color: transparent;
+	text-size-adjust: 100%;
+	user-select: none;
+}
+
+button:disabled {
+	color: var(--fg-alpha-5);
+	pointer-events: none;
+}
+
+html {
+	height: 100%;
+	touch-action: manipulation;
+}
+
+li {
+	--radius: 5px;
+	align-items: center;
+	background-color: var(--fg-alpha-1);
+	display: flex;
+	overflow: hidden;
+}
+
+li:first-of-type {
+	border-top-left-radius: var(--radius);
+	border-top-right-radius: var(--radius);
+}
+
+li:last-of-type {
+	border-bottom-left-radius: var(--radius);
+	border-bottom-right-radius: var(--radius);
+}
+
+li:nth-child(even) {
+	background-color: var(--fg-alpha-05);
+}
+
+li>* {
+	border: none;
+	font-size: inherit;
+	padding: 10px 15px;
+}
+
+li button {
+	background-color: transparent;
+	color: inherit;
+	transition: all .25s;
+}
+
+li button:focus,
+li button:hover {
+	background-color: var(--fg-alpha-2);
+}
+
+li button:active {
+	background-color: var(--fg-alpha-25);
+}
+
+li .list-item-main {
+	cursor: text;
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	user-select: text;
+}
+
+ul {
+	margin: 0;
+	padding-inline-start: 0;
+}
+
+.panel {
+	animation: fadeIn .25s;
+	background-color: var(--bg-body);
+	border: 0 solid var(--fg-alpha-1);
+	display: flex;
+	flex: 0 0 400px;
+	flex-direction: column;
+	gap: 10px;
+	height: 100%;
+	max-width: 100%;
+	overflow: auto;
+	padding: 20px 20px 50px;
+}
+
+.panel-left {
+	border-right-width: 1px;
+}
+
+.panel-right {
+	border-left-width: 1px;
+}
+
+.panel h1 {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 0;
+}
+
+#app {
+	height: 100%;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.panel {
+		border: none;
+		position: fixed;
+		width: 100%;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-body: rgb(30, 30, 30);
+		--fg-alpha-05: rgba(255, 255, 255, .05);
+		--fg-alpha-1: rgba(255, 255, 255, .1);
+		--fg-alpha-2: rgba(255, 255, 255, .2);
+		--fg-alpha-25: rgba(255, 255, 255, .25);
+		--fg-alpha-5: rgba(255, 255, 255, .5);
+		color-scheme: dark;
+	}
+
+	body {
+		color: whitesmoke;
+	}
+}
