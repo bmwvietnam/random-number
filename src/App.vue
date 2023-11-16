@@ -21,12 +21,12 @@ const names = ref<string[]>(((): string[] => {
 const settings = ref<SettingsInfo>(((): SettingsInfo => {
 	const defaultValue = {
 		evenOnly: false,
-		maximum: "60",
+		maximum: "144",
 		minimum: "1",
 		oddOnly: false,
 		quantity: "1",
 		repeat: true,
-		speed: "100",
+		speed: "30",
 	};
 	try {
 		const storedSettings = localStorage.getItem("settings");
@@ -70,7 +70,7 @@ function addHistoryItem(newItem: string): void {
 }
 
 function openGitHub(): void {
-	window.open("https://github.com/shangzhenyang/random-number");
+	window.open("https://www.bmw.vn");
 }
 
 function setInputValue(key: string): ((event: Event) => void) {
