@@ -21,7 +21,7 @@ export default defineConfig({
 				icons: [{
 					purpose: "any",
 					sizes: "720x720",
-					src: "https://www.shangzhenyang.com/images/avatar.png",
+					src: "https://bethefirst.bmw.vn/thex5/favicon/android-icon-192x192.png",
 					type: "image/png",
 				}],
 				id: "/",
