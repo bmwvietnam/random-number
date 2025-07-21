@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/${{ random-number }}/'
+    publicPath: '/${{random-number}}/'
 }
