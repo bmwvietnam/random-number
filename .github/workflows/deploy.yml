@@ -1,51 +1,33 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Vue App to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ['main']
+    branches:
+      - main # Change this to 'master' if your default branch is master
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: 'npm'
-      - name: Install dependencies
+          node-size: 20
+
+      - name: Install Dependencies
         run: npm install
-      - name: Build
+
+      - name: Build Project
         run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload dist repository
-          path: './dist'
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # Use 'dist' for Vite/Vue CLI. Change to 'build' if your build script outputs elsewhere.
+          branch: gh-pages # The branch the action will deploy to
